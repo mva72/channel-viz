@@ -157,7 +157,7 @@
 											bottom: 0.02,
 											left: 0.02
 										},
-										//color: 'steelblue'
+										color: 'steelblue'
 										series: series
 									});
 
