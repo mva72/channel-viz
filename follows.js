@@ -140,7 +140,7 @@
 										color: '#' + dataColor
 									});
 									//schalen
-									var scale = d3.scale.linear().domain([min,max]).nice();
+									//var scale = d3.scale.linear().domain([min,max]).nice();
 									//
 
 									// Initialize Graph DOM Element
@@ -161,7 +161,7 @@
 										},
 										color: 'steelblue', 
 										series: series
-										scale: scale
+										//scale: scale
 									});
 
 									graph.render();
@@ -178,7 +178,7 @@
 									// Define and Render Y Axis (Datastream Values)
 									var yAxis = new Rickshaw.Graph.Axis.Y.scaled( {
 										graph: graph,
-										scale: scale
+										//scale: scale
 										tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
 										ticksTreatment: ticksTreatment
 									});
