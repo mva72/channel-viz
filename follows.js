@@ -142,35 +142,7 @@
 
 									// Initialize Graph DOM Element
 									$('#feed-' + feedId + ' .datastreams .datastream-' + datastream.id + ' .graph').attr('id', 'graph-' + feedId + '-' + datastream.id);
-
-
-									// build scales
-									var data, graph, i, max, min, point, random, scales, series, _i, _j, _k, _l, _len, _len1, _len2, _ref;
-									scales = [];
-									_ref = data[1];
-									for (_j = 0, _len = _ref.length; _j < _len; _j++) {
-										 point = _ref[_j];
-										 point.y *= point.y;
-										}
-
-									for (_k = 0, _len1 = data.length; _k < _len1; _k++) {
-  										series = data[_k];
-  										min = Number.MAX_VALUE;
-  										max = Number.MIN_VALUE;
-									 for (_l = 0, _len2 = series.length; _l < _len2; _l++) {
-										 point = series[_l];
-    											min = Math.min(min, point.y);
-											 max = Math.max(max, point.y);
-  											}
-  										if (_k === 0) {
-    										scales.push(d3.scale.linear().domain([min, max]).nice());
-  											} else {
-    										scales.push(d3.scale.pow().domain([min, max]).nice());
-  											}
-										}
-
-									
-						 			// Build Graph
+													 			// Build Graph
 									var graph = new Rickshaw.Graph( {
 										element: document.querySelector('#graph-' + feedId + '-' + datastream.id),
 										width: 600,
@@ -203,7 +175,6 @@
 									var yAxis = new Rickshaw.Graph.Axis.Y.scaled( {
 										graph: graph,
 										grid:false,
-										scale: scales[0],
 										tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
 										ticksTreatment: ticksTreatment
 									});
