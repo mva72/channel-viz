@@ -172,7 +172,7 @@
 									xAxis.render();
 
 									// Define and Render Y Axis (Datastream Values)
-									var yAxis = new Rickshaw.Graph.Axis.Y.scaled( {
+									var yAxis = new Rickshaw.Graph.Axis.Y( {
 										graph: graph,
 										scale: scale,
 										tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
