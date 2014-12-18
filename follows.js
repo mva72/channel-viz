@@ -139,6 +139,9 @@
 										data: points,
 										color: '#' + dataColor
 									});
+									//schalen
+									var scale = d3.scale.linear().domain([datastream.min_value, datastream.max_value]).nice();
+									//
 
 									// Initialize Graph DOM Element
 									$('#feed-' + feedId + ' .datastreams .datastream-' + datastream.id + ' .graph').attr('id', 'graph-' + feedId + '-' + datastream.id);
@@ -158,6 +161,7 @@
 										},
 										color: 'steelblue', 
 										series: series
+										scale: scale
 									});
 
 									graph.render();
@@ -172,9 +176,9 @@
 									xAxis.render();
 
 									// Define and Render Y Axis (Datastream Values)
-									var yAxis = new Rickshaw.Graph.Axis.Y( {
+									var yAxis = new Rickshaw.Graph.Axis.Y.scaled( {
 										graph: graph,
-										//scale: scale,
+										scale: scale
 										tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
 										ticksTreatment: ticksTreatment
 									});
