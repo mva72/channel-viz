@@ -140,7 +140,7 @@
 										color: '#' + dataColor
 									});
 									//schalen
-									var scale = d3.scale.linear().domain([datastream.min_value, datastream.max_value]).nice();
+									//var scale = d3.scale.linear().domain([datastream.min_value, datastream.max_value]).nice();
 									//
 
 									// Initialize Graph DOM Element
